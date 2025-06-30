@@ -1,16 +1,20 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: YOUR_USERNAME/YOUR_REPO_NAME # Change this to your actual repo
   branch: main
-
-# Enable editorial workflow (creates pull requests instead of direct commits)
-publish_mode: editorial_workflow
+  # Use GitHub's built-in authentication
+  auth_type: implicit
+  # This creates a simple auth flow
 
 media_folder: "images"
 public_folder: "/images"
 
+# This makes all changes go through pull requests
+publish_mode: editorial_workflow
+
 collections:
   - name: "posts"
-    label: "Blog Posts"
+    label: "Blog Posts" 
     folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -22,7 +26,7 @@ collections:
   
   - name: "pages"
     label: "Pages"
-    folder: "_pages"
+    folder: "_pages" 
     create: true
     slug: "{{slug}}"
     fields:
