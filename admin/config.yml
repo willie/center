@@ -1,10 +1,12 @@
 backend:
-  name: github
-  repo: willie/center # Change this to your repo
-  branch: main # or master, depending on your default branch
+  name: git-gateway
+  branch: main
 
-media_folder: "images" # Where uploaded images will be stored
-public_folder: "/images" # How images are accessed in your site
+# Enable editorial workflow (creates pull requests instead of direct commits)
+publish_mode: editorial_workflow
+
+media_folder: "images"
+public_folder: "/images"
 
 collections:
   - name: "posts"
